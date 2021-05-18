@@ -1,5 +1,6 @@
 import React from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
+import { NavLink, Link } from "react-router-dom";
 
 /**
  * @author
@@ -10,7 +11,10 @@ const Header = (props) => {
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
-        <Navbar.Brand href="#home">Admin Dashboard</Navbar.Brand>
+        {/* <Navbar.Brand href="#home">Admin Dashboard</Navbar.Brand> */}
+        <Link to="/" className="navbar-brand">
+          Admin Dashboard
+        </Link>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
@@ -23,10 +27,18 @@ const Header = (props) => {
       </NavDropdown> */}
           </Nav>
           <Nav>
-            <Nav.Link href="#deets">Signin</Nav.Link>
-            {/* <Nav.Link eventKey={2} href="#memes">
-        Dank memes
-      </Nav.Link> */}
+            {/* <Nav.Link href="#deets">Signin</Nav.Link> */}
+            <li className="Nav-item">
+              <NavLink to="signin" className="nav-link">
+                Signin
+              </NavLink>
+            </li>
+
+            <li className="Nav-item">
+              <NavLink to="signup" className="nav-link">
+                Signup
+              </NavLink>
+            </li>
           </Nav>
         </Navbar.Collapse>
       </Container>
